@@ -74,7 +74,7 @@ class Kahi_minciencias_sample(KahiBase):
         work: dict
             A dictionary with the work to process.
         """
-        work_id = {"id_producto_pd": work["id_producto_pd"]}
+        work_id = {"id_producto_pd": work["id_producto_pd"], "cod_grupo_gr": work["cod_grupo_gr"]}
         if self.cols_out["gruplac_production"].count_documents(work_id) == 0:
             self.cols_out["gruplac_production"].insert_one(work)
         else:
